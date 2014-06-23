@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Test deck</title>
+  <title>Motor Trends - Miles Per Gallon shiny app</title>
   <meta charset="utf-8">
-  <meta name="description" content="Test deck">
+  <meta name="description" content="Motor Trends - Miles Per Gallon shiny app">
   <meta name="author" content="">
   <meta name="generator" content="slidify" />
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -32,7 +32,7 @@
     <!-- LOGO SLIDE -->
         <slide class="title-slide segue nobackground">
   <hgroup class="auto-fadein">
-    <h1>Test deck</h1>
+    <h1>Motor Trends - Miles Per Gallon shiny app</h1>
     <h2></h2>
     <p><br/></p>
   </hgroup>
@@ -43,14 +43,13 @@
     <!-- SLIDES -->
     <slide class="" id="slide-1" style="background:;">
   <hgroup>
-    <h2>Read-And-Delete</h2>
+    <h2>Overview</h2>
   </hgroup>
   <article data-timings="">
-    <ol>
-<li>Edit YAML front matter</li>
-<li>Write using R Markdown</li>
-<li>Use an empty line followed by three dashes to separate slides!</li>
-</ol>
+    <p>The shinyapp was developed to showcase an interactive application, using mtcars dataset.<br>
+The application displays a boxplot of miles per gallon and highlights the mean.<br>
+The slider is used to choose the subset of data based on Trasmission type 0 - automatic and 1 - manual.<br>
+A choice of radio buttons help choose the color of the line used to highlight the median.</p>
 
   </article>
   <!-- Presenter Notes -->
@@ -58,13 +57,76 @@
 
 <slide class="class" id="id" style="background:;">
   <hgroup>
-    <h2>Slide 2</h2>
+    <h2>Links</h2>
   </hgroup>
   <article data-timings="">
-    <pre><code class="r">plot(1:10, 1:10)
+    <p>The shiny app is accessible at 
+<a href="https://steve-nathan.shinyapps.io/shinyapp2/">https://steve-nathan.shinyapps.io/shinyapp2/</a></p>
+
+<p>The code for the shiny app is at Github at 
+<a href="https://github.com/steve-nathan/shinyapp2">https://github.com/steve-nathan/shinyapp2</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Plot Transmission type automatic</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">data(mtcars)
+mtcars1 &lt;- subset(mtcars, am == 0)
+boxplot(mtcars1$mpg, ylab = &quot;Miles/(US) gallon&quot;, xlab = &quot;Transmission type automatic&quot;, 
+    col = &quot;lightblue&quot;, main = &quot;mtcars - boxplot of MPG&quot;)
 </code></pre>
 
 <p><img src="assets/fig/unnamed-chunk-1.png" alt="plot of chunk unnamed-chunk-1"> </p>
+
+<pre><code class="r">meanmpg = mean(mtcars1$mpg)
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Plot Transmission type manual</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">mtcars1 &lt;- subset(mtcars, am == 1)
+boxplot(mtcars1$mpg, ylab = &quot;Miles/(US) gallon&quot;, xlab = &quot;Transmission type manual&quot;, 
+    col = &quot;lightblue&quot;, main = &quot;mtcars - boxplot of MPG&quot;)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-2.png" alt="plot of chunk unnamed-chunk-2"> </p>
+
+<pre><code class="r">meanmpg = mean(mtcars1$mpg)
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Summary</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>In the shiny application we used two widgets to demonstrate the interactive capability.  </p>
+
+<p>Slider :- 
+        sliderInput(&#39;type&#39;, &#39;Choose Transmission type:- 0 = automatic, 1 = manual&#39;,value = 0, min = 0, max = 1, step = 1),</p>
+
+<p>Radio Button :-
+        radioButtons(&quot;color&quot;, label = h3(&quot;Color&quot;),
+                     choices = list(&quot;Red&quot; = &quot;red&quot;,
+                                    &quot;Blue&quot; = &quot;blue&quot;,
+                                    &quot;Green&quot; = &quot;green&quot;)
+                     ,selected = &quot;red&quot;)</p>
+
+<p>By combining widgets, Applications can be developed to make it interactive and engaging.</p>
 
   </article>
   <!-- Presenter Notes -->
@@ -76,14 +138,32 @@
     <ul>
       <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=1 title='Read-And-Delete'>
+        data-slide=1 title='Overview'>
          1
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=2 title='Slide 2'>
+        data-slide=2 title='Links'>
          2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Plot Transmission type automatic'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Plot Transmission type manual'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Summary'>
+         5
       </a>
     </li>
   </ul>
