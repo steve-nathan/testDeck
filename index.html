@@ -49,7 +49,7 @@
     <p>The shinyapp was developed to showcase an interactive application, using mtcars dataset.<br>
 The application displays a boxplot of miles per gallon and highlights the mean.<br>
 The slider is used to choose the subset of data based on Trasmission type 0 - automatic and 1 - manual.<br>
-A choice of radio buttons help choose the color of the line used to highlight the median.</p>
+A choice of radio buttons help choose the color of the line used to highlight the mean MPG for the subset.</p>
 
   </article>
   <!-- Presenter Notes -->
@@ -72,19 +72,17 @@ A choice of radio buttons help choose the color of the line used to highlight th
 
 <slide class="class" id="id" style="background:;">
   <hgroup>
-    <h2>Plot Transmission type automatic</h2>
+    <h2>Plot MPG vs Transmission type automatic</h2>
   </hgroup>
   <article data-timings="">
     <pre><code class="r">data(mtcars)
 mtcars1 &lt;- subset(mtcars, am == 0)
 boxplot(mtcars1$mpg, ylab = &quot;Miles/(US) gallon&quot;, xlab = &quot;Transmission type automatic&quot;, 
-    col = &quot;lightblue&quot;, main = &quot;mtcars - boxplot of MPG&quot;)
+    col = &quot;lightblue&quot;, main = &quot;mtcars - boxplot of MPG&quot;, width = 240, height = 240)
+abline(h = mean(mtcars1$mpg), col = &quot;red&quot;, lty = 3, lwd = 5)
 </code></pre>
 
 <p><img src="assets/fig/unnamed-chunk-1.png" alt="plot of chunk unnamed-chunk-1"> </p>
-
-<pre><code class="r">meanmpg = mean(mtcars1$mpg)
-</code></pre>
 
   </article>
   <!-- Presenter Notes -->
@@ -92,18 +90,16 @@ boxplot(mtcars1$mpg, ylab = &quot;Miles/(US) gallon&quot;, xlab = &quot;Transmis
 
 <slide class="class" id="id" style="background:;">
   <hgroup>
-    <h2>Plot Transmission type manual</h2>
+    <h2>Plot MPG vs Transmission type manual</h2>
   </hgroup>
   <article data-timings="">
     <pre><code class="r">mtcars1 &lt;- subset(mtcars, am == 1)
 boxplot(mtcars1$mpg, ylab = &quot;Miles/(US) gallon&quot;, xlab = &quot;Transmission type manual&quot;, 
-    col = &quot;lightblue&quot;, main = &quot;mtcars - boxplot of MPG&quot;)
+    col = &quot;lightblue&quot;, main = &quot;mtcars - boxplot of MPG&quot;, width = 240, height = 240)
+abline(h = mean(mtcars1$mpg), col = &quot;blue&quot;, lty = 3, lwd = 5)
 </code></pre>
 
 <p><img src="assets/fig/unnamed-chunk-2.png" alt="plot of chunk unnamed-chunk-2"> </p>
-
-<pre><code class="r">meanmpg = mean(mtcars1$mpg)
-</code></pre>
 
   </article>
   <!-- Presenter Notes -->
@@ -150,13 +146,13 @@ boxplot(mtcars1$mpg, ylab = &quot;Miles/(US) gallon&quot;, xlab = &quot;Transmis
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=3 title='Plot Transmission type automatic'>
+        data-slide=3 title='Plot MPG vs Transmission type automatic'>
          3
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=4 title='Plot Transmission type manual'>
+        data-slide=4 title='Plot MPG vs Transmission type manual'>
          4
       </a>
     </li>

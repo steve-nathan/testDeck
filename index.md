@@ -15,7 +15,7 @@ mode        : selfcontained # {standalone, draft}
 The shinyapp was developed to showcase an interactive application, using mtcars dataset.  
 The application displays a boxplot of miles per gallon and highlights the mean.  
 The slider is used to choose the subset of data based on Trasmission type 0 - automatic and 1 - manual.  
-A choice of radio buttons help choose the color of the line used to highlight the median.
+A choice of radio buttons help choose the color of the line used to highlight the mean MPG for the subset.
 
 
 --- .class #id 
@@ -30,39 +30,33 @@ https://github.com/steve-nathan/shinyapp2
 
 --- .class #id 
 
-## Plot Transmission type automatic
+## Plot MPG vs Transmission type automatic
 
 
 ```r
 data(mtcars)
 mtcars1 <- subset(mtcars, am == 0)
 boxplot(mtcars1$mpg, ylab = "Miles/(US) gallon", xlab = "Transmission type automatic", 
-    col = "lightblue", main = "mtcars - boxplot of MPG")
+    col = "lightblue", main = "mtcars - boxplot of MPG", width = 240, height = 240)
+abline(h = mean(mtcars1$mpg), col = "red", lty = 3, lwd = 5)
 ```
 
 ![plot of chunk unnamed-chunk-1](assets/fig/unnamed-chunk-1.png) 
 
-```r
-meanmpg = mean(mtcars1$mpg)
-```
-
 
 --- .class #id 
 
-## Plot Transmission type manual
+## Plot MPG vs Transmission type manual
 
 
 ```r
 mtcars1 <- subset(mtcars, am == 1)
 boxplot(mtcars1$mpg, ylab = "Miles/(US) gallon", xlab = "Transmission type manual", 
-    col = "lightblue", main = "mtcars - boxplot of MPG")
+    col = "lightblue", main = "mtcars - boxplot of MPG", width = 240, height = 240)
+abline(h = mean(mtcars1$mpg), col = "blue", lty = 3, lwd = 5)
 ```
 
 ![plot of chunk unnamed-chunk-2](assets/fig/unnamed-chunk-2.png) 
-
-```r
-meanmpg = mean(mtcars1$mpg)
-```
 
 
 
