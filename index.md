@@ -28,6 +28,12 @@ The code for the shiny app is at Github at
 https://github.com/steve-nathan/shinyapp2
 
 
+The slidify index.Rmd is at github
+https://github.com/steve-nathan/testDeck/
+
+The slidify presentation is at 
+http://steve-nathan.github.io/testDeck/index.html
+
 --- .class #id 
 
 ## Plot MPG vs Transmission type automatic
@@ -37,7 +43,7 @@ https://github.com/steve-nathan/shinyapp2
 data(mtcars)
 mtcars1 <- subset(mtcars, am == 0)
 boxplot(mtcars1$mpg, ylab = "Miles/(US) gallon", xlab = "Transmission type automatic", 
-    col = "lightblue", main = "mtcars - boxplot of MPG", width = 240, height = 240)
+    col = "lightblue", main = "mtcars - boxplot of MPG")
 abline(h = mean(mtcars1$mpg), col = "red", lty = 3, lwd = 5)
 ```
 
@@ -52,7 +58,7 @@ abline(h = mean(mtcars1$mpg), col = "red", lty = 3, lwd = 5)
 ```r
 mtcars1 <- subset(mtcars, am == 1)
 boxplot(mtcars1$mpg, ylab = "Miles/(US) gallon", xlab = "Transmission type manual", 
-    col = "lightblue", main = "mtcars - boxplot of MPG", width = 240, height = 240)
+    col = "lightblue", main = "mtcars - boxplot of MPG")
 abline(h = mean(mtcars1$mpg), col = "blue", lty = 3, lwd = 5)
 ```
 

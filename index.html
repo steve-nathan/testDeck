@@ -66,6 +66,12 @@ A choice of radio buttons help choose the color of the line used to highlight th
 <p>The code for the shiny app is at Github at 
 <a href="https://github.com/steve-nathan/shinyapp2">https://github.com/steve-nathan/shinyapp2</a></p>
 
+<p>The slidify index.Rmd is at github
+<a href="https://github.com/steve-nathan/testDeck/">https://github.com/steve-nathan/testDeck/</a></p>
+
+<p>The slidify presentation is at 
+<a href="http://steve-nathan.github.io/testDeck/index.html">http://steve-nathan.github.io/testDeck/index.html</a></p>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -78,7 +84,7 @@ A choice of radio buttons help choose the color of the line used to highlight th
     <pre><code class="r">data(mtcars)
 mtcars1 &lt;- subset(mtcars, am == 0)
 boxplot(mtcars1$mpg, ylab = &quot;Miles/(US) gallon&quot;, xlab = &quot;Transmission type automatic&quot;, 
-    col = &quot;lightblue&quot;, main = &quot;mtcars - boxplot of MPG&quot;, width = 240, height = 240)
+    col = &quot;lightblue&quot;, main = &quot;mtcars - boxplot of MPG&quot;)
 abline(h = mean(mtcars1$mpg), col = &quot;red&quot;, lty = 3, lwd = 5)
 </code></pre>
 
@@ -95,7 +101,7 @@ abline(h = mean(mtcars1$mpg), col = &quot;red&quot;, lty = 3, lwd = 5)
   <article data-timings="">
     <pre><code class="r">mtcars1 &lt;- subset(mtcars, am == 1)
 boxplot(mtcars1$mpg, ylab = &quot;Miles/(US) gallon&quot;, xlab = &quot;Transmission type manual&quot;, 
-    col = &quot;lightblue&quot;, main = &quot;mtcars - boxplot of MPG&quot;, width = 240, height = 240)
+    col = &quot;lightblue&quot;, main = &quot;mtcars - boxplot of MPG&quot;)
 abline(h = mean(mtcars1$mpg), col = &quot;blue&quot;, lty = 3, lwd = 5)
 </code></pre>
 
